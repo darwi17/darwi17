@@ -1,9 +1,13 @@
-# FinanzApp para Android (APK)
+# FinanzApp para Android
 
-1. Crea un repositorio nuevo en GitHub (por ejemplo `finanzapp`).
-2. Sube todo el contenido de esta carpeta, incluida la carpeta oculta `.github`.
-3. En GitHub entra a la pestaña **Actions**, elige **Construir APK** y pulsa **Run workflow**.
-4. Espera unos 5 a 10 minutos. Al terminar, abre la ejecución y descarga **FinanzApp-apk** (un .zip con `app-debug.apk`).
-5. Pasa el APK al celular, ábrelo y acepta instalar desde esta fuente.
+FinanzApp permite registrar ingresos y gastos, ver el saldo y consultar movimientos recientes. Los datos se guardan en el almacenamiento local del dispositivo; no se envían a ningún servidor ni se sincronizan entre dispositivos.
 
-La app está en `www/index.html`. Si la modificas y subes el cambio, GitHub genera un APK nuevo.
+## Descargar e instalar
+
+Descarga `FinanzApp.apk` desde la sección **Releases** de este repositorio. Abre el archivo en Android y, si el sistema lo solicita, permite la instalación desde esa fuente.
+
+## Crear el APK
+
+El workflow **Construir APK** se puede iniciar desde la pestaña **Actions** con **Run workflow**. También se ejecuta al subir cambios. El APK se descarga desde los artefactos de la ejecución.
+
+La aplicación está en `www/index.html`. El script de compilación comprueba que ese archivo exista y falla si falta, en lugar de crear una pantalla de ejemplo.
