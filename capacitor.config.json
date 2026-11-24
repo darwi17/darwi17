@@ -1,0 +1,6 @@
+{
+  "appId": "com.finanzapp.app",
+  "appName": "FinanzApp",
+  "webDir": "www",
+  "android": { "backgroundColor": "#14213D" }
+}
