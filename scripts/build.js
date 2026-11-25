@@ -1,9 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 
-const entryPoint = path.join(__dirname, "..", "www", "index.html");
-if (!fs.existsSync(entryPoint)) {
-  throw new Error("Missing www/index.html. Add the FinanzApp web app before building the APK.");
+const root = path.join(__dirname, "..");
+const source = path.join(root, "index.html");
+const webDir = path.join(root, "www");
+
+if (!fs.existsSync(source)) {
+  throw new Error("Missing index.html. Add the FinanzApp web app before building the APK.");
 }
 
-console.log("FinanzApp web app found.");
+fs.mkdirSync(webDir, { recursive: true });
+fs.copyFileSync(source, path.join(webDir, "index.html"));
+console.log("Prepared FinanzApp web app in www/.");
